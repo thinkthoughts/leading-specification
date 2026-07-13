@@ -1,0 +1,31 @@
+
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leading-specification"
+version = "1.0.0"
+description = "Reusable engineering context for leading specifications and Notebook 00 foundations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Dan Hawkley"}]
+dependencies = [
+  "numpy>=2.0",
+  "matplotlib>=3.9",
+  "pandas>=2.2",
+  "sympy>=1.13",
+  "networkx>=3.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "jupyter>=1.1", "ipykernel>=6.29"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
